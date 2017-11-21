@@ -1,4 +1,6 @@
 <h1>the show page </h1>
 
+<%= link_to("Back to Pictures", "/pictures") %>
+
 <p><%= @picture.title %>, <%= @picture.artist %></p>
-<img src="<%= @picture.url %>">
+<%= image_tag(@picture.url) %>
