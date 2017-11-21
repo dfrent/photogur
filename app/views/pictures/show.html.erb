@@ -1,9 +1,8 @@
 <h1>the show page </h1>
 
-<%= link_to("Back to Pictures", "/pictures") %>
-
 <p><%= @picture.title %>, <%= @picture.artist %></p>
 <%= image_tag(@picture.url) %>
 
 <%= link_to("Back to Pictures", "/pictures") %>
- <%= link_to("Edit", "/pictures/#{@picture.id}/edit") %>
+<%= link_to("Edit", "/pictures/#{@picture.id}/edit") %>
+<%= link_to("Delete", "/pictures/#{@picture.id}", method: :delete, data: {confirm: "Are you sure you want to delete this picture?"})  %>
