@@ -8,22 +8,26 @@ class Picture < ApplicationRecord
     Picture.newest_first.limit(5)
   end
 
-  ##-----------------------------------------------##
-  def self.created_before(time)
-    Picture.where("created_at < ?", time)
-  end
-
-  def self.created_less_than_amonth_ago
-    where("created_at > ?", (Time.now - 2678400))
-  end
-
-  def self.created_more_than_amonth_ago
-    where("created_at < ?", (Time.now + 2678400))
-  end
-
   def self.created_after(time)
     Picture.where("created_at > ?", time)
   end
 
+  def self.created_before(time)
+    Picture.where("created_at < ?", time)
+  end
+  ##-----------------------------------------------##
+
+  def self.created_less_than_amonth_ago
+    where("created_at > ?", (Time.now - 1.month))
+  end
+
+  def self.created_more_than_amonth_ago
+    where("created_at < ?", (Time.now + 1.month))
+  end
+
+
+  def self.pictures_created_in_year(year)
+    Picture.where(created_at: (Time.new(year)..Time.new(year + 1)))
+  end
 
 end

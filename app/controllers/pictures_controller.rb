@@ -2,6 +2,7 @@ class PicturesController < ApplicationController
 
   def index
     @pictures = Picture.all
+    @picture = Picture
     @new_pictures = Picture.created_more_than_amonth_ago
     @old_pictures = Picture.created_less_than_amonth_ago
     @most_recent_pictures = Picture.most_recent_five
