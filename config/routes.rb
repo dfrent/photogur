@@ -14,4 +14,9 @@ get 'pictures/:id' => 'pictures#show'
 
 delete 'pictures/:id' => 'pictures#destroy'
 
+
+  resources :users
+
+
+
 end
