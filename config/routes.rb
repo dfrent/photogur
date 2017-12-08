@@ -14,6 +14,7 @@ get 'pictures/:id' => 'pictures#show'
 
 delete 'pictures/:id' => 'pictures#destroy'
 
+get 'login' => 'sessions#new', as: 'new_session'
 
   resources :users
 
